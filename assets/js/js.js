@@ -720,8 +720,7 @@ function initIsotope() {
     getSortData: {
       valor: "[data-valor] parseInt",
       ano: "[data-ano]",
-      modelo: "[data-modelo]",
-      category: "[date-category]"
+      modelo: "[data-modelo]"
     },
     filter: function() {
       var $this = $(this);
@@ -971,7 +970,8 @@ function getBlog() {
           var $box =
             '<a title="' +
             element.title +
-            '" href="artigo.html" class="grid__item ' +
+            '" href="artigo.html" class="grid__item date ' +
+            element.category +
             '"data-category="' +
             element.category +
             '" data-date="' +
@@ -993,7 +993,138 @@ function getBlog() {
 
         $(".js-grid-blog").append($box);
       });
+
+      initBlogIsotope();
     });
+}
+
+var qsRegex;
+var categoryFilter;
+
+function initBlogIsotope() {
+  // GRID
+  // init Isotope
+
+  var $container = $(".js-grid-blog").isotope({
+    itemSelector: ".grid__item",
+    layoutMode: "fitRows",
+    getSortData: {
+      date: "[data-date] parseInt"
+    },
+    // sortAscending: false,
+    filter: function() {
+      var $this = $(this);
+      var categoryResult = categoryFilter ? $this.is(categoryFilter) : true;
+      var search = qsRegex
+        ? $(this)
+            .text()
+            .match(qsRegex)
+        : true;
+      return categoryResult && search;
+    }
+  });
+
+  var initShow = 40; //number of items loaded on init & onclick load more button
+  var counter = initShow; //counter for load more button
+  var iso = $container.data("isotope"); // get Isotope instance
+  var footer = $(".blog-grid .container");
+
+  footer.append(
+    '<button class="button button--red button--ghost button--icon button--medium js-load-more">CARREGAR MAIS<svg version="1.1" id="Capa_1" xmlns=http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve"><g><g id="plus"><polygon points="32,12 20,12 20,0 12,0 12,12 0,12 0,20 12,20 12,32 20,32 20,20 32,20"/></g></g></svg></button >'
+  );
+
+  blogLoadMore(initShow);
+
+  function blogLoadMore(toShow) {
+    var elems = $container.isotope("getFilteredItemElements");
+
+    $container.find(".hidden").removeClass("hidden");
+
+    var hiddenElems = iso.filteredItems
+      .slice(toShow, elems.length)
+      .map(function(item) {
+        return item.element;
+      });
+
+    $(hiddenElems).addClass("hidden");
+    $container.isotope("layout");
+
+    //when no more to load, hide show more button
+    if (hiddenElems.length == 0) {
+      jQuery(".js-load-more").hide();
+
+      if (footer.find("#entreContato").length) {
+      } else {
+        footer.append(
+          '<a href="/contato" id="entreContato" class="button button--red button--ghost button--medium">entre em contato</a>'
+        );
+      }
+    } else {
+      jQuery("#entreContato").show();
+      jQuery(".js-load-more").show();
+    }
+
+    $(".js-load-more").removeClass("is-loading");
+  }
+
+  //when load more button clicked
+  $(".js-load-more").click(function() {
+    $(this).addClass("is-loading");
+
+    if ($(".js-filter button").data("clicked")) {
+      //when filter button clicked, set initial value for counter
+      counter = initShow;
+      $(".js-filter button").data("clicked", false);
+    } else {
+      counter = counter;
+    }
+
+    counter = counter + initShow;
+
+    blogLoadMore(counter);
+  });
+
+  $("#date").on("change", function() {
+    var filterValue = this.value === "true";
+
+    blogLoadMore(1000);
+    $container.isotope({
+      sortBy: "date",
+      sortAscending: filterValue
+    });
+  });
+
+  $("#category").on("change", function() {
+    categoryFilter = this.value;
+    blogLoadMore(1000);
+    $container.isotope();
+  });
+
+  // use value of search field to filter
+  var $quicksearch = $(".quicksearch").keyup(
+    debounce(function() {
+      qsRegex = new RegExp($quicksearch.val(), "gi");
+      console.log("aa");
+
+      $container.isotope();
+      blogLoadMore(1000);
+    }, 200)
+  );
+
+  // debounce so filtering doesn't happen every millisecond
+  function debounce(fn, threshold) {
+    var timeout;
+    return function debounced() {
+      if (timeout) {
+        clearTimeout(timeout);
+      }
+      function delayed() {
+        fn();
+        timeout = null;
+      }
+      timeout = setTimeout(delayed, threshold || 100);
+    };
+  }
 }
 
 function getProducts() {

@@ -34,12 +34,13 @@
     padding: 15px;
 
     @include media(">=desktop") {
-      letter-spacing: ls(500, 30);
       font-size: 30px;
+      letter-spacing: ls(500, 30);
       line-height: 74px;
       padding: 0;
       position: absolute;
       right: 30%;
+      text-align: right;
       text-transform: uppercase;
       top: 0;
       width: 100%;
@@ -48,15 +49,13 @@
 
   &__title {
     color: $c-white;
-
     font-weight: fw("bold");
-
     text-transform: uppercase;
 
     @include media(">=desktop") {
       letter-spacing: ls(500, 46);
       position: absolute;
-      right: 15.5%;
+      right: 14.5%;
       font-size: 46px;
       top: 60px;
     }
@@ -83,11 +82,97 @@
   }
 }
 
-.section {
-  img {
-    max-width: 100%;
-    display: block;
-    margin: 45px auto;
+.blog {
+  &__content {
+    img {
+      max-width: 92%;
+      display: block;
+      margin: 45px auto;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.4;
+
+      @include media(">=desktop") {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 0;
+
+    @include media(">=desktop") {
+      flex-direction: row;
+    }
+
+    .button {
+      height: 55px;
+      line-height: 55px;
+      padding: 0;
+      text-align: center;
+
+      &::before {
+        border-color: transparent #fff transparent transparent;
+        border-style: solid;
+        border-width: 5px 10px 5px 0;
+        content: "";
+        display: inline-block;
+        height: 0;
+        left: -18px;
+        position: relative;
+        transition: $dt;
+        width: 0;
+      }
+
+      @include media(">=desktop") {
+        height: 75px;
+        line-height: 75px;
+        padding: 0 55px;
+        text-align: right;
+        width: 356px;
+      }
+    }
+
+    .social {
+      margin-top: 30px;
+      flex-direction: column;
+      align-items: center;
+
+      @include media(">=desktop") {
+        margin-right: 15%;
+        margin-top: 0;
+        flex-direction: row;
+      }
+
+      &__item {
+        margin: 0 12px;
+      }
+
+      svg {
+        height: 26px;
+
+        path {
+          fill: $c-gray;
+        }
+      }
+
+      &__label {
+        text-transform: uppercase;
+        font-weight: fw("bold");
+        font-size: 16px;
+        letter-spacing: ls(300, 16);
+
+        @include media(">=desktop") {
+          font-size: 24px;
+          letter-spacing: ls(300, 24);
+        }
+      }
+    }
   }
 
   &--gray {
