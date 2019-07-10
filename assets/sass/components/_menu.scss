@@ -1,0 +1,60 @@
+.menu {
+  width: 100%;
+  
+  @include media(">=desktop") {
+    width: auto;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    @include media(">=desktop") {
+      flex-direction: row;
+    }
+  }
+
+  &__item {
+    padding: 0 10px;
+
+    @include media(">=wide") {
+      padding: 0 15px;
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+
+    &:hover {
+      .menu__link {
+        color: $c-red;
+      }
+    }
+  }
+
+  &__link {
+    color: $c-black;
+    display: block;
+    font-size: 16px;
+    font-weight: fw("semibold");
+    letter-spacing: ls(100, 16);
+    padding: 10px 0;
+    text-align: center;
+    text-transform: uppercase;
+    transition: $dt;
+
+    @include media(">=desktop") {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: ls(100, 12);
+      padding: 0;
+    }
+
+    img {
+      width: 20px;
+    }
+  }
+}

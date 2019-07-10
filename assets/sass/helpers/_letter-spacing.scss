@@ -1,0 +1,3 @@
+@function ls($val, $font-size) {
+  @return ( $val * $font-size / 1000 ) * 1px
+}

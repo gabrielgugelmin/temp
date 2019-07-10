@@ -1,0 +1,190 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__control {
+    position: relative;
+    margin-bottom: 15px;
+    width: 100%;
+
+    &--error {
+      .input,
+      .textarea {
+        border-color: $c-red;
+      }
+    }
+
+    &--select {
+    position: relative;
+
+    &::after {
+      content: "";
+      font-family: FontAwesome;
+      display: inline-block;
+      position: absolute;
+      right: 15px;
+      top: 18px;
+      pointer-events: none;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 11px 8px 0 8px;
+      border-color: #787677 transparent transparent transparent;
+    }
+  }
+  }
+
+  &__error {
+    color: $c-red;
+    font-weight: fw("bold");
+    position: absolute;
+    right: 8px;
+    top: 5px;
+  }  
+
+  &--inline {
+    justify-content: center;
+
+    @include media(">=tablet") {
+      flex-direction: row;
+    }
+    
+    .form__control {
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+button,
+input,
+optgroup,
+select,
+textarea,html input[type="button"],
+input[type="reset"],
+input[type="submit"],button[disabled],
+html input[disabled],button::-moz-focus-inner,
+input::-moz-focus-inner, input[type="checkbox"],
+input[type="radio"], input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button, input[type="search"], input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  border:none;
+  background-image:none;
+  background-color:transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.input,
+.textarea,
+.select {
+  @include placeholder {
+    font-style: italic;
+  }
+
+  -webkit-appearance: none;
+  border: 2px solid #787677;
+  border-radius: 0;
+  color: $c-gray-dark;
+  font-size: 14px;
+  padding: 6px 10px;
+  width: 100%;
+
+  @include media(">desktop") {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+
+.textarea {
+  height: 105px;
+  resize: none;
+
+  &--big {
+    height: 164px;
+  }
+}
+
+select option:disabled {
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  left: -9999px;
+  position: absolute;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  cursor: pointer;
+  padding-left: 56px;
+  padding-top: 9px;
+  font-weight: fw("regular");
+  color: $c-gray;
+  font-size: 16px;
+  position: relative;
+
+  @include media(">=desktop") {
+    padding-top: 14px;
+  }
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  background: transparent;
+  border: 2px solid $c-gray;
+  content: '';
+  height: 36px;
+  left: 0; top: 0;
+  position: absolute;
+  width: 36px; 
+
+  @include media(">=desktop") {
+    height: 46px;
+    width: 46px; 
+  }
+}
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '✔';
+  position: absolute;
+  top: 0; 
+  left: 12px;
+  font-size: 28px;
+  line-height: 46px;
+  color: $c-blue;
+  transition: all .2s;
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+}
+[type="checkbox"]:disabled:checked + label:after {
+  color: $c-gray;
+}
+[type="checkbox"]:disabled + label {
+  color: $c-gray-light;
+}
+/* accessibility */
+[type="checkbox"]:checked:focus + label:before,
+[type="checkbox"]:not(:checked):focus + label:before {
+  box-shadow: 0 0 5px 1px rgba($c-black, .3);
+}

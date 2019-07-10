@@ -1,0 +1,96 @@
+@import "all";
+
+.blog-banner {
+  height: 300px;
+  position: relative;
+
+  @include media(">=desktop") {
+    height: 430px;
+  }
+
+  &__bg {
+    background-image: linear-gradient(
+      to left,
+      rgb(17, 44, 68) 0%,
+      rgba(17, 44, 68, 0.5) 79%,
+      rgba(17, 44, 68, 0) 100%
+    );
+    position: relative;
+
+    @include media(">=desktop") {
+      width: 640px;
+      right: 0;
+      position: absolute;
+      height: 74px;
+    }
+  }
+
+  &__subtitle {
+    color: $c-white;
+    font-size: 18px;
+    font-weight: fw("bold");
+    letter-spacing: ls(500, 18);
+    margin: 0;
+    padding: 15px;
+
+    @include media(">=desktop") {
+      letter-spacing: ls(500, 30);
+      font-size: 30px;
+      line-height: 74px;
+      padding: 0;
+      position: absolute;
+      right: 30%;
+      text-transform: uppercase;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    color: $c-white;
+
+    font-weight: fw("bold");
+
+    text-transform: uppercase;
+
+    @include media(">=desktop") {
+      letter-spacing: ls(500, 46);
+      position: absolute;
+      right: 15.5%;
+      font-size: 46px;
+      top: 60px;
+    }
+  }
+
+  &__text {
+    width: 100%;
+    position: absolute;
+    top: 120px;
+    text-align: center;
+
+    @include media(">=desktop") {
+      position: absolute;
+      right: 0;
+      top: 144px;
+      width: 100%;
+    }
+  }
+}
+
+.text-left {
+  p {
+    text-align: left;
+  }
+}
+
+.section {
+  img {
+    max-width: 100%;
+    display: block;
+    margin: 45px auto;
+  }
+
+  &--gray {
+    background-color: $c-gray-lighter;
+  }
+}

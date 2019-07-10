@@ -1,0 +1,29 @@
+.grid-slider {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1030px;
+
+  &.slick-slider {
+    margin-bottom: 40px;
+  }
+
+  .slick-arrow.slick-next {
+    right: 30px;
+    top: 98px;
+  }
+  
+  .slick-arrow.slick-prev {
+    left: 30px;
+    top: 90px;
+  }
+
+  .grid__item {
+    height: auto;
+    margin: 0 25px;
+  }
+
+  .grid__img {
+    height: 180px;
+  }  
+}

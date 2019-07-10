@@ -1,0 +1,33 @@
+.social {
+  display: flex;
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin: 0 5px;
+
+    img {
+      width: 16px;
+    }
+  }
+
+  .icon-text {
+    margin-left: 20px;
+  }
+
+  &--big {
+    .social__item {
+      margin: 0 10px;
+
+      img {
+        width: 24px;
+      }
+    }
+  }
+}

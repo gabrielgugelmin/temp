@@ -1,0 +1,145 @@
+.media {
+  display: flex;
+
+  &__item {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  &__desc {
+    &--gray {
+      background-color: $c-gray;
+    }
+
+    &--red {
+      background-color: $c-red;
+    }
+
+    &--blue {
+      background-color: $c-blue;
+    }
+  }
+
+  &__title {
+    color: $c-gray;
+    font-size: 15px;
+    font-weight: fw("bold");
+    letter-spacing: 2px;
+    line-height: 1.4;
+    margin: 25px 0 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    color: $c-gray-dark;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  &--center {
+    max-width: 1030px;
+    margin: 0 auto;
+  }
+
+  &--col4 {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .media__item {
+      justify-content: baseline;
+      padding: 0 30px;
+      margin-bottom: 45px;
+      
+      @include media(">=phone") {
+        width: 50%;
+      }
+
+      @include media(">=tablet") {
+        width: 25%;
+      }
+    }
+
+    .media__img {
+      align-items: center;
+      display: flex;
+      height: 120px;
+      justify-content: center;
+    }
+
+    .media__text {
+      margin-top: 30px;
+    }
+  }
+
+  &--horizontal {
+    
+  }
+
+  &--full {
+    flex-direction: column;
+
+    .media__item {
+      align-items: center;
+      flex-direction: column;
+      height: 235px;
+      width: 100%;
+
+      
+
+      @include media(">=tablet") {
+        flex-direction: row;
+
+        &:nth-child(even) {
+          flex-direction: row-reverse;
+        }
+      }
+    }
+
+    .media__img {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
+      width: 100%;
+
+      @include media(">=tablet") {
+        width: 40%;
+      }
+    }
+
+    .media__desc {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      width: 100%;
+      
+      @include media(">=tablet") {
+        width: 60%;
+      }
+    }
+
+    .media__title {
+      color: $c-white;
+      font-size: 16px;
+      font-weight: fw("bold");
+      letter-spacing: 6px;
+      margin: 0;
+
+      @include media(">=tablet") {
+        font-size: 30px;
+        letter-spacing: 10px;
+      }
+    }
+  }
+}

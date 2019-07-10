@@ -1,0 +1,222 @@
+[
+  {
+    "name": "BMW E46 M3 DISKI SERIE 2011/2012",
+    "desc": "NOVO / AUTOMÁTICO / SEDAN",
+    "ano": "2000/2001",
+    "valor": "91.000,00",
+    "blindado": true,
+    "seminovo": false,
+    "novo": true,
+    "marca": "bmw",
+    "modelo": "modelo1"
+  },
+  {
+    "name": "BMW E46 M3 DISKI SERIE 2011/2012",
+    "desc": "NOVO / AUTOMÁTICO / SEDAN",
+    "ano": "2001/2002",
+    "valor": "92.000,00",
+    "blindado": false,
+    "seminovo": false,
+    "novo": true,
+    "marca": "bmw",
+    "modelo": "modelo2"
+  },
+  {
+    "name": "Mercedes-Benz - A 200",
+    "desc": "NOVO / AUTOMÁTICO / SEDAN",
+    "ano": "2000/2001",
+    "valor": "93.000,00",
+    "blindado": false,
+    "seminovo": false,
+    "novo": true,
+    "marca": "mercedes",
+    "modelo": "modelo1"
+  },
+  {
+    "name": "Mercedes-Benz - CLA 45 AMG",
+    "desc": "NOVO / AUTOMÁTICO / SEDAN",
+    "ano": "2001/2002",
+    "valor": "94.000,00",
+    "blindado": true,
+    "seminovo": false,
+    "novo": true,
+    "marca": "mercedes",
+    "modelo": "modelo2"
+  },
+  {
+    "name": "Audi - Q3",
+    "desc": "NOVO / AUTOMÁTICO / SEDAN",
+    "ano": "2011/2012",
+    "valor": "95.000,00",
+    "blindado": false,
+    "seminovo": false,
+    "novo": true,
+    "marca": "audi",
+    "modelo": "modelo1"
+  },
+  {
+    "name": "Jeep - Renegade",
+    "desc": "NOVO / AUTOMÁTICO / SEDAN",
+    "ano": "2011/2012",
+    "valor": "96.000,00",
+    "blindado": true,
+    "seminovo": false,
+    "novo": true,
+    "marca": "jeep",
+    "modelo": "modelo2"
+  },
+  {
+    "name": "BMW - 335i",
+    "desc": "NOVO / AUTOMÁTICO / SEDAN",
+    "ano": "2011/2012",
+    "valor": "97.000,00",
+    "blindado": false,
+    "seminovo": true,
+    "novo": false,
+    "marca": "bmw",
+    "modelo": "modelo1"
+  },
+  {
+    "name": "Mercedes-Benz - C180",
+    "desc": "NOVO / AUTOMÁTICO / SEDAN",
+    "ano": "2011/2012",
+    "valor": "98.000,00",
+    "blindado": false,
+    "seminovo": true,
+    "novo": false,
+    "marca": "mercedes",
+    "modelo": "modelo1"
+  },
+  {
+    "name": "Audi - A3",
+    "desc": "NOVO / AUTOMÁTICO / SEDAN",
+    "ano": "2011/2012",
+    "valor": "99.000,00",
+    "blindado": false,
+    "seminovo": true,
+    "novo": false,
+    "marca": "audi",
+    "modelo": "modelo2"
+  },
+  {
+    "name": "Cadillac - Escalade",
+    "desc": "NOVO / AUTOMÁTICO / SEDAN",
+    "ano": "2011/2012",
+    "valor": "100.000,00",
+    "blindado": false,
+    "seminovo": true,
+    "novo": false,
+    "marca": "cadillac",
+    "modelo": "modelo1"
+  },
+  {
+    "name": "Jaguar - XF",
+    "desc": "NOVO / AUTOMÁTICO / SEDAN",
+    "ano": "2011/2012",
+    "valor": "101.000,00",
+    "blindado": false,
+    "seminovo": true,
+    "novo": false,
+    "marca": "jaguar",
+    "modelo": "modelo2"
+  },
+  {
+    "name": "Toyota - Corolla",
+    "desc": "NOVO / AUTOMÁTICO / SEDAN",
+    "ano": "2011/2012",
+    "valor": "102.000,00",
+    "blindado": true,
+    "seminovo": true,
+    "novo": false,
+    "marca": "bmw",
+    "modelo": "modelo1"
+  },
+  {
+    "name": "BMW - X6",
+    "desc": "NOVO / AUTOMÁTICO / SEDAN",
+    "ano": "2011/2012",
+    "valor": "103.000,00",
+    "blindado": true,
+    "seminovo": true,
+    "novo": false,
+    "marca": "bmw",
+    "modelo": "modelo3"
+  },
+  {
+    "name": "Porsche - 911 CARRERA 4S COUP\u00c9",
+    "desc": "NOVO / AUTOMÁTICO / SEDAN",
+    "ano": "2011/2012",
+    "valor": "104.000,00",
+    "blindado": true,
+    "seminovo": true,
+    "novo": false,
+    "marca": "bmw",
+    "modelo": "modelo3"
+  },
+  {
+    "name": "Ford - Mustang",
+    "desc": "NOVO / AUTOMÁTICO / SEDAN",
+    "ano": "2011/2012",
+    "valor": "105.000,00",
+    "blindado": true,
+    "seminovo": true,
+    "novo": false,
+    "marca": "bmw",
+    "modelo": "modelo1"
+  },
+  {
+    "name": "BMW - 320i",
+    "desc": "NOVO / AUTOMÁTICO / SEDAN",
+    "ano": "2011/2012",
+    "valor": "106.000,00",
+    "blindado": true,
+    "seminovo": true,
+    "novo": false,
+    "marca": "bmw",
+    "modelo": "modelo3"
+  },
+  {
+    "name": "BMW - 320i",
+    "desc": "NOVO / AUTOMÁTICO / SEDAN",
+    "ano": "2011/2012",
+    "valor": "107.000,00",
+    "blindado": true,
+    "seminovo": true,
+    "novo": false,
+    "marca": "bmw",
+    "modelo": "modelo1"
+  },
+  {
+    "name": "Mercedes-Benz - C180",
+    "desc": "NOVO / AUTOMÁTICO / SEDAN",
+    "ano": "2011/2012",
+    "valor": "108.000,00",
+    "blindado": false,
+    "seminovo": true,
+    "novo": false,
+    "marca": "bmw",
+    "modelo": "modelo1"
+  },
+  {
+    "name": "Land Rover - Range Rover Evoque",
+    "desc": "NOVO / AUTOMÁTICO / SEDAN",
+    "ano": "2011/2012",
+    "valor": "109.000,00",
+    "blindado": false,
+    "seminovo": true,
+    "novo": false,
+    "marca": "bmw",
+    "modelo": "modelo1"
+  },
+  {
+    "name": "Volkswagen - Fusca",
+    "desc": "NOVO / AUTOMÁTICO / SEDAN",
+    "ano": "2011/2012",
+    "valor": "110.000,00",
+    "blindado": true,
+    "seminovo": true,
+    "novo": false,
+    "marca": "bmw",
+    "modelo": "modelo3"
+  }
+]

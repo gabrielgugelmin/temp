@@ -1,0 +1,46 @@
+.banner {
+  background-color: $c-gray-lighter;
+  height: 280px;
+
+  @include media(">=tablet") {
+    height: 360px;
+  }
+
+  @include media(">=desktop") {
+    height: 430px;
+  }
+
+  &__item {
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+
+.slick-arrow {
+  background: url(../img/icons/arrow.svg) 0 0/contain no-repeat;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  z-index: 1;
+
+  &:hover,
+  &:focus {
+    //background: url(../img/icons/arrow.svg) 0 0/contain no-repeat;
+  }
+
+  &::before {
+    display: none;
+  }
+
+  &.slick-next {
+    right: 0;
+  }
+
+  &.slick-prev {
+    left: 0;
+    margin-top: -12px;
+    transform: scaleX(-1);
+  }
+}

@@ -1,0 +1,125 @@
+.footer {
+  background-color: lighten($c-gray-dark, 6.27);
+  padding: 75px 0 0;
+
+  .row {
+    margin: 0;
+    padding: 0 30px;
+  }
+
+  &__logo {
+    display: block;    
+    margin: 0 auto 30px;
+    max-width: 140px;
+
+    @include media(">=desktop") {
+      margin: 0 0 15px;
+      max-width: 100%;
+    }
+  }
+
+  &__about {
+    color: $c-gray-lighter;
+    font-size: 12px;
+    letter-spacing: ls(100, 12);
+    font-weight: fw("regular");
+    line-height: 24px;
+  }
+  
+  &__title {
+    color: $c-gray-lighter;
+    font-size: 18px;
+    font-weight: fw("bold");
+    letter-spacing: ls(400, 18);
+    line-height: 2;
+    margin-bottom: 30px;
+    margin-top: 80px;
+    text-transform: uppercase;
+  }
+
+  &__list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+    li {
+      margin-bottom: 10px;
+      
+      a {
+        color: $c-gray-lighter;
+        font-size: 14px;
+        letter-spacing: ls(200, 14);
+        font-weight: fw("regular");
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__address {
+    .footer__contact {
+      margin-bottom: 30px;
+
+      p {
+        color: $c-gray-lighter;
+        font-size: 12px;
+        font-weight: fw("regular");
+        letter-spacing: ls(100, 12);
+        line-height: 2;
+      }
+
+      img {
+        width: 24px;
+      }
+
+      &--big {
+        p {
+          font-size: 20px;
+          letter-spacing: ls(25, 20);
+          font-weight: fw("regular");
+        }
+      }
+    }
+  }
+
+  .social {
+    margin-top: 45px;
+
+    @include media("<desktop") {
+      justify-content: center;
+      width: 100%;
+    }
+    
+    &__item {
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__bottom {
+    background-color: $c-gray-dark;
+    margin-top: 50px;
+    position: relative;
+    padding: 25px 30px;
+
+    small {
+      font-size: 14px;
+      color: $c-gray-light;
+      letter-spacing: 1px;
+    }
+
+    .powered-by-inffus {
+      bottom: 10px;
+      position: absolute;
+      right: 15px;
+      
+
+      @include media(">=desktop") {
+        bottom: inherit;
+        top: 25px;
+      }
+    }
+  }
+
+  
+}

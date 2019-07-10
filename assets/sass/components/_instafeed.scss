@@ -1,0 +1,152 @@
+.instafeed {
+  margin: 60px auto 0;
+
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+
+  &__item {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    float: left;
+    height: 200px;
+    position: relative;
+    width: 50%;
+
+    &:last-child {
+      display: none;
+
+      @include media(">=tablet") {
+        display: inline-block;
+      }
+    }
+
+    @include media(">=phone") {
+      height: 240px;
+    }
+
+    @include media(">=tablet") {
+      height: 180px;
+      width: 20%;
+
+      &:nth-child(1) {
+        height: 360px;
+        width: 40%;
+      }
+    }
+
+    @include media(">=wide") {
+      height: 256px;
+      width: 256px;
+
+      &:nth-child(1) {
+        height: 512px;
+        width: 512px;
+
+        .instafeed__info span {
+          margin: 0 20px;
+          padding-left: 35px;
+
+          &::before {
+            top: 0;
+            height: 26px;
+            width: 26px;
+          }
+        }
+      }
+    }
+    &:hover {
+      a {
+        &::after{
+          opacity: 0;
+        }
+      }
+    }
+
+    a {
+      display: block;
+      height: 100%;
+      position: relative;
+
+      &::after {
+        background: rgba($c-red, .28);
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        transition: $dt;
+        z-index: 1;
+      }
+    }
+  }
+
+  &__info {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 6;
+
+    span {
+      display: inline-block;
+      margin: 0 15px;
+      color: $c-white;
+      font-weight: fw("bold");
+      font-size: 18px;
+      position: relative;
+      padding-left: 25px;
+      text-shadow: 0 0 4px rgba($c-red, .4);
+
+      &::before {
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: "";
+        display: block;
+        height: 15px;
+        left: 0;
+        position: absolute;
+        top: 5px;
+        width: 15px;
+      }
+
+      &:first-child {
+        &::before {
+          background-image: url("../img/icons/heart.svg");
+        }
+      }
+      
+      &:last-child {
+        &::before {
+          background-image: url("../img/icons/comment.svg");
+        }
+      }
+    }
+  }
+
+  &__link {
+    color: $c-gray-dark;
+    cursor: pointer;
+    display: block;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-top: -22px;
+    position: relative;
+    text-align: center;
+    top: -40px;
+
+    @include media(">=desktop") {
+      font-size: 16px;
+    }
+  }
+}
