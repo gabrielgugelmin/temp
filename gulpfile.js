@@ -9,6 +9,8 @@ var gulp = require("gulp"),
   autoprefixer = require("gulp-autoprefixer"),
   browserSync = require("browser-sync").create();
 
+sass.compiler = require("node-sass");
+
 var path = "assets/";
 
 gulp.task("serve", function() {

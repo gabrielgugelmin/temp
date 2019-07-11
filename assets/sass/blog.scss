@@ -179,3 +179,95 @@
     background-color: $c-gray-lighter;
   }
 }
+
+.blog-grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include media(">=tablet") {
+    margin: 0 -10px;
+  }
+
+  &__item {
+    display: inline-block;
+    margin: 0;
+    width: 100%;
+
+    &:hover {
+      text-decoration: none;
+
+      .grid__desc {
+        background-color: $c-gray;
+
+        h3,
+        p,
+        .grid__price {
+          color: $c-white;
+        }
+      }
+    }
+
+    @include media(">=tablet") {
+      margin: 0 10px 40px 10px;
+      width: calc(50% - 20px);
+    }
+
+    @include media(">=desktop") {
+      width: calc(33.33% - 20px);
+    }
+
+    &--blindado {
+      position: relative;
+
+      &::after {
+        align-items: center;
+        background: $c-black url(../img/icons/shield.svg) 8px 7px/16px no-repeat;
+        color: $c-white;
+        content: "BLINDADO";
+        display: flex;
+        font-size: 11px;
+        font-weight: fw("bold");
+        letter-spacing: 2px;
+        padding: 8px 6px 8px 30px;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+
+  &__img {
+    height: 180px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include media(">=phone") {
+      height: 200px;
+    }
+
+    @include media(">=tablet") {
+      height: 160px;
+    }
+
+    @include media(">=desktop") {
+      height: 200px;
+    }
+  }
+
+  &__title {
+    color: $c-gray;
+    font-size: 16px;
+    font-weight: fw("bold");
+    text-transform: uppercase;
+    letter-spacing: ls(100, 16);
+  }
+
+  &__subtitle {
+    font-size: 12px;
+    font-weight: fw("bold");
+    text-transform: uppercase;
+    letter-spacing: ls(100, 12);
+    color: #999999;
+  }
+}

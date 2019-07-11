@@ -970,19 +970,19 @@ function getBlog() {
           var $box =
             '<a title="' +
             element.title +
-            '" href="artigo.html" class="grid__item date ' +
+            '" href="artigo.html" class="blog-grid__item date ' +
             element.category +
             '"data-category="' +
             element.category +
             '" data-date="' +
             element.date +
             '">' +
-            '<div class="grid__img" style="background-image: url(/assets/img/blog1.jpg);"></div>' +
-            '<div class="grid__desc">' +
-            '<h3 class="grid__title">' +
+            '<div class="blog-grid__img" style="background-image: url(/assets/img/blog1.jpg);"></div>' +
+            '<div class="blog-grid__desc">' +
+            '<h3 class="blog-grid__title">' +
             element.title +
             "</h3>" +
-            '<p class="grid__text">' +
+            '<p class="blog-grid__subtitle">' +
             element.subtitle +
             "</p>" +
             "</div> " +
@@ -1006,7 +1006,7 @@ function initBlogIsotope() {
   // init Isotope
 
   var $container = $(".js-grid-blog").isotope({
-    itemSelector: ".grid__item",
+    itemSelector: ".blog-grid__item",
     layoutMode: "fitRows",
     getSortData: {
       date: "[data-date] parseInt"

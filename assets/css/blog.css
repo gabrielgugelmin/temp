@@ -1365,3 +1365,77 @@ select option:disabled {
 
 .blog--gray {
   background-color: #ebebeb; }
+
+.blog-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  @media (min-width: 768px) {
+    .blog-grid {
+      margin: 0 -10px; } }
+  .blog-grid__item {
+    display: inline-block;
+    margin: 0;
+    width: 100%; }
+    .blog-grid__item:hover {
+      text-decoration: none; }
+      .blog-grid__item:hover .grid__desc {
+        background-color: #4a4748; }
+        .blog-grid__item:hover .grid__desc h3,
+        .blog-grid__item:hover .grid__desc p,
+        .blog-grid__item:hover .grid__desc .grid__price {
+          color: #ffffff; }
+    @media (min-width: 768px) {
+      .blog-grid__item {
+        margin: 0 10px 40px 10px;
+        width: calc(50% - 20px); } }
+    @media (min-width: 992px) {
+      .blog-grid__item {
+        width: calc(33.33% - 20px); } }
+    .blog-grid__item--blindado {
+      position: relative; }
+      .blog-grid__item--blindado::after {
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        background: #000000 url(../img/icons/shield.svg) 8px 7px/16px no-repeat;
+        color: #ffffff;
+        content: "BLINDADO";
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        padding: 8px 6px 8px 30px;
+        position: absolute;
+        right: 0;
+        top: 0; }
+  .blog-grid__img {
+    height: 180px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; }
+    @media (min-width: 480px) {
+      .blog-grid__img {
+        height: 200px; } }
+    @media (min-width: 768px) {
+      .blog-grid__img {
+        height: 160px; } }
+    @media (min-width: 992px) {
+      .blog-grid__img {
+        height: 200px; } }
+  .blog-grid__title {
+    color: #4a4748;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.6px; }
+  .blog-grid__subtitle {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #999999; }
